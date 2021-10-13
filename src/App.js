@@ -9,11 +9,11 @@ class App extends React.Component {
   state = {
     data: null,
     formData: null,
-    showResult: false,
+    step: false,
   }
 
   toggleComp = val => {
-    this.setState({ showResult: val })
+    this.setState({ step: val })
   }
 
   dataHandler = (data, formData) => {
@@ -21,14 +21,15 @@ class App extends React.Component {
   }
 
   render() {
+    const { data, formData, step } = this.state;
     return (
       <div className="App">
         <Header />
         <div className="container">
-          {this.state.showResult ?
+          {step === 'two' ?
             <WeatherResult
-              data={this.state.data}
-              formData={this.state.formData}
+              data={data}
+              formData={formData}
               toggleComp={this.toggleComp} />
             :
             <WeatherForm

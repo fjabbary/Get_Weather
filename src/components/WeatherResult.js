@@ -29,7 +29,7 @@ export default class WeatherResult extends Component {
 
                 <div>
                     <button className="btn btn-primary me-4">Close</button>
-                    <button className="btn btn-primary" onClick={() => this.props.toggleComp(false)}>More Weather</button>
+                    <button className="btn btn-primary" onClick={() => this.props.toggleComp('one')}>More Weather</button>
                 </div>
             </React.Fragment>
         )

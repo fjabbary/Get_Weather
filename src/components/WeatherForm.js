@@ -45,7 +45,7 @@ export default class WeatherForm extends Component {
         axios.get(url).then(res => {
             //Pass data to App component
             this.props.dataHandler(res.data, this.state)
-            this.props.toggleComp(true)
+            this.props.toggleComp('two')
         }).catch(err => {
             this.setState({ error: true })
         })
@@ -64,7 +64,7 @@ export default class WeatherForm extends Component {
                     <input type="email" className="form-control" placeholder="Enter your name" id="userfullname" name="userfullname" onBlur={this.handleblur} onChange={this.handleInputChange} value={userfullname} required />
                 </div>
 
-                {showMsg ? <div className="alert alert-primary" role="alert">
+                {showMsg ? <div className="alert alert-warning" role="alert">
                     <p>Hello {userfullname} </p>
                     <p>Please Enter City Name, and choose "Weather response in"</p>
                 </div> : null}
