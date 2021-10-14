@@ -9,7 +9,7 @@ class App extends React.Component {
   state = {
     data: null,
     formData: null,
-    step: false,
+    step: 'one',
   }
 
   toggleComp = val => {
